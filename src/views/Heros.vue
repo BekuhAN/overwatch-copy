@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header title="Герои" />
     <Footer />
   </div>
 </template>
@@ -18,3 +18,7 @@ export default {
   },
 };
 </script>
+
+<style>
+
+</style>
