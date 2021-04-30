@@ -25,8 +25,6 @@ export default {
 .main-menu {
   display: flex;
   align-items: center;
-  width: 96vw;
-  margin: 0 auto;
   background: #f2f1ed;
   .logo {
     background: #353c42;
