@@ -2,7 +2,7 @@
   <header>
     <div class="container">
       <Menu :nav="listMenu" />
-      <h1 v-if="title" class="page_title">{{title}}</h1>
+      <h1 v-if="title" class="page_title">{{ title }}</h1>
     </div>
   </header>
 </template>
@@ -42,12 +42,13 @@ header {
   margin: 0;
   padding: 50px 0;
   .page_title {
-      font-style: italic;
-      text-align: center;
-      font-size: 56px;
-      text-transform: uppercase;
-      font-weight: normal;
-      margin-top: 30px;
+    font-family: "Big Noodle Titling";
+    font-style: italic;
+    text-align: center;
+    font-size: 56px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-top: 30px;
   }
 }
 </style>

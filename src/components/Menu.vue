@@ -26,6 +26,7 @@ export default {
   display: flex;
   align-items: center;
   background: #f2f1ed;
+  font-family: "Century Gothic";
   .logo {
     background: #353c42;
     padding: 5px;
@@ -84,6 +85,11 @@ export default {
     background: #f06414;
     height: 50px;
     color: #fff;
+    transition: .2s;
+    cursor: pointer;
+    &:hover {
+      background: darken(#f06414, 5%);
+    }
   }
 }
 </style>

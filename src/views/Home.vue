@@ -4,8 +4,18 @@
     <section>
       <div class="container">
         <div class="col-6 section_video">
-          <!-- src="https://www.youtube.com/embed/FK3CfjJ857g" -->
-          <figure class="video">
+          <Popup :close="popupClose" v-if="popupVisible">
+            <iframe
+              width="1140"
+              height="620"
+              src="https://www.youtube.com/embed/FK3CfjJ857g"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </Popup>
+          <figure class="video" @click="popupShow">
             <img src="../assets/img/video-1.jpg" />
             <span class="video_play">
               <span class="video_play_icon"></span>
@@ -24,6 +34,20 @@
         </div>
       </div>
     </section>
+    <section class="heros">
+      <div class="container">
+        <div class="section_title">
+          <h2 class="section_main_title">ВЫБОР ГЕРОЯ!</h2>
+          <div class="section_description">
+            Прежде чем начать игру, вам предстоит выбрать героя. Может, вы
+            хотите управлять вооруженной до зубов разумной гориллой с Луны? Или
+            мечтаете перемещаться во времени? А может, вам больше нравится
+            боевой диджей? Кем бы вы ни хотели быть, в Overwatch вы найдете
+            героя по вкусу.
+          </div>
+        </div>
+      </div>
+    </section>
     <Footer />
   </div>
 </template>
@@ -32,12 +56,27 @@
 // @ is an alias to /src
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
+import Popup from "../components/Popup.vue";
 
 export default {
+  data() {
+    return {
+      popupVisible: false,
+    };
+  },
   name: "Home",
   components: {
     Header,
     Footer,
+    Popup,
+  },
+  methods: {
+    popupShow() {
+      this.popupVisible = true;
+    },
+    popupClose() {
+      this.popupVisible = false;
+    },
   },
 };
 </script>
@@ -75,15 +114,19 @@ export default {
   }
 }
 
-.section_main_title {
-  font-style: italic;
-  font-size: 50px;
-  text-transform: uppercase;
-  font-weight: normal;
-  margin-top: 30px;
-  margin-bottom: 16px;
-}
-.section_description {
-  font-size: 21px;
+.heros {
+  background: url('../assets/img/bg-heros.jpg');
+  .section_title {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    .section_main_title  {
+      color: #fff;
+      margin-top: 0;
+    }
+    .section_description {
+      color: #fff;
+    }
+  }
 }
 </style>
