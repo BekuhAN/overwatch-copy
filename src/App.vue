@@ -6,16 +6,16 @@
 
 <style lang="scss">
 @font-face {
-  font-family: 'Big Noodle Titling';
-  src: local('Big Noodle Titling'),
-    url('~@/assets/fonts/Big Noodle Titling.ttf') format('truetype');
+  font-family: "Big Noodle Titling";
+  src: local("Big Noodle Titling"),
+    url("~@/assets/fonts/Big Noodle Titling.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Century Gothic';
-  src: local('Century Gothic'),
-    url('~@/assets/fonts/Century Gothic.ttf') format('truetype');
+  font-family: "Century Gothic";
+  src: local("Century Gothic"),
+    url("~@/assets/fonts/Century Gothic.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -24,8 +24,9 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: #353c42;
+  color: #28354F;
   box-sizing: content-box !important;
+  line-height: 1.3;
 }
 #app {
   font-family: Roboto, sans-serif;
@@ -48,17 +49,24 @@ section {
   padding: 0px 30px;
 }
 
-.section_main_title {
-  font-style: italic;
-  font-size: 56px;
-  text-transform: uppercase;
-  font-weight: normal;
-  margin-top: 30px;
-  margin-bottom: 16px;
-  font-family: "Big Noodle Titling";
+.col-4 {
+  min-width: 33.333333%;
+  padding: 0px 15px;
 }
-.section_description {
-  font-size: 21px;
-  line-height: 1.3;
+
+.section_title {
+  width: 100%;
+  .section_main_title {
+    font-style: italic;
+    font-size: 64px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-top: 15px;
+    margin-bottom: 16px;
+    font-family: "Big Noodle Titling";
+  }
+  .section_description {
+    font-size: 21px;
+  }
 }
 </style>

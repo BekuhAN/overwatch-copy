@@ -9,7 +9,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import Menu from "./Menu.vue";
+import Menu from "./Menu";
 
 export default {
   props: {

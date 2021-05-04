@@ -7,7 +7,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     listMenu: [],
-    listHeros: [],
+    listHeros: [], 
+    listRoles: []
   },
   getters: {
     listMenu(state) {
@@ -16,6 +17,9 @@ export default new Vuex.Store({
     listHeros(state) {
       return state.listHeros;
     },
+    listRoles(state) {
+      return state.listRoles;
+    },
   },
   mutations: {
     updateListMenu(state, payload) {
@@ -23,6 +27,9 @@ export default new Vuex.Store({
     },
     updateListHeros(state, payload) {
       state.listHeros = payload;
+    },
+    updateListRoles(state, payload) {
+      state.listRoles = payload;
     },
   },
   actions: {
@@ -35,6 +42,11 @@ export default new Vuex.Store({
       axios
         .get("http://localhost:3000/heros")
         .then(({ data }) => commit("updateListHeros", data));
+    },
+    getListRoles({ commit }) {
+      axios
+        .get("http://localhost:3000/roles?_embed=heros")
+        .then(({ data }) => commit("updateListRoles", data));
     },
   },
   modules: {},
