@@ -4,7 +4,7 @@
     <section>
       <div class="container">
         <div class="col-6 section_video">
-          <Popup :close="popupClose" :itemId="0" v-if="popupVisible[0]">
+          <Popup v-if="isActivePopup === 0">
             <iframe
               width="1140"
               height="620"
@@ -238,7 +238,7 @@
       </div>
       <div class="container">
         <div class="col-6 section_video">
-          <Popup :close="popupClose" :itemId="1" v-if="popupVisible[1]">
+          <Popup v-if="isActivePopup === 1">
             <iframe
               width="1140"
               height="620"
@@ -372,7 +372,7 @@
           </div>
         </div>
         <div class="col-6 section_video">
-          <Popup :close="popupClose" :itemId="2" v-if="popupVisible[2]">
+          <Popup v-if="isActivePopup === 2">
             <iframe
               width="1140"
               height="620"
@@ -450,8 +450,8 @@
             <div class="section_description">
               Играйте так, как удобно вам, с помощью функции «Поиск группы»!
               Теперь у вас есть возможность контролировать игру, настроив группу
-              под себя: можно ограничить доступ к ней по уровню репутации, прежде
-              чем запускать «Быструю игру», «Тренировку с ИИ» или любой
+              под себя: можно ограничить доступ к ней по уровню репутации,
+              прежде чем запускать «Быструю игру», «Тренировку с ИИ» или любой
               соревновательный режим. Найдите команду единомышленников или
               создайте свою.
             </div>
@@ -482,7 +482,7 @@ export default {
   },
   name: "Home",
   computed: {
-    ...mapGetters(["listHeros", "listRoles"]),
+    ...mapGetters(["listHeros", "listRoles", "isActivePopup"]),
     sortedHeros() {
       if (this.sortHeros.length) {
         return this.sortHeros;
@@ -505,11 +505,7 @@ export default {
   },
   methods: {
     popupShow(arrIndex) {
-      this.popupVisible[arrIndex] = true;
-      console.log(this.popupVisible);
-    },
-    popupClose(arrIndex) {
-      this.popupVisible[arrIndex] = false;
+      this.$store.dispatch("togglePopup", arrIndex);
     },
     ...mapActions(["getListHeros", "getListRoles"]),
     countPage(arr, itemsCount) {

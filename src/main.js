@@ -3,11 +3,28 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faFacebookF, faVk, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebookF,
+  faVk,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faAngleLeft, faAngleRight, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleLeft,
+  faAngleRight,
+  faShareSquare,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faFacebookF, faYoutube, faVk, faAngleLeft, faAngleRight, faTimes);
+library.add(
+  faFacebookF,
+  faYoutube,
+  faVk,
+  faAngleLeft,
+  faAngleRight,
+  faTimes,
+  faShareSquare
+);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 

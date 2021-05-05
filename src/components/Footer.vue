@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="footer_item">
-      <div class="btn">Приобрести</div>
+      <div class="btn" @click="popupShow(3)">Приобрести</div>
     </div>
     <div class="footer_item social_icons">
       <div class="title">БУДЬТЕ НА СВЯЗИ!</div>
@@ -19,7 +19,17 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    ...mapGetters(["isActivePopup"]),
+  },
+  methods: {
+    popupShow(arrIndex) {
+      this.$store.dispatch("togglePopup", arrIndex);
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -61,16 +71,16 @@ footer {
       transition: 0.2s;
       cursor: pointer;
       &:not(:nth-child(2)):before {
-          content: "";
-          display: block;
-          width: 5px;
-          height: 5px;
-          border-radius: 50%;
-          position: absolute;
-          background: rgba(#fff, 0.5);
-          top: 50%;
-          transform: translateY(-50%);
-          left: -20px;
+        content: "";
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        position: absolute;
+        background: rgba(#fff, 0.5);
+        top: 50%;
+        transform: translateY(-50%);
+        left: -20px;
       }
       &:hover {
         border-color: #f06414;

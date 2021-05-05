@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header title="Киберспорт"/>
+    <Header title="Киберспорт" />
     <Footer />
   </div>
 </template>
@@ -19,6 +19,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

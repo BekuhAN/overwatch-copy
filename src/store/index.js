@@ -7,8 +7,9 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     listMenu: [],
-    listHeros: [], 
-    listRoles: []
+    listHeros: [],
+    listRoles: [],
+    activePopup: null,
   },
   getters: {
     listMenu(state) {
@@ -20,6 +21,9 @@ export default new Vuex.Store({
     listRoles(state) {
       return state.listRoles;
     },
+    isActivePopup(state) {
+      return state.activePopup;
+    },
   },
   mutations: {
     updateListMenu(state, payload) {
@@ -30,6 +34,9 @@ export default new Vuex.Store({
     },
     updateListRoles(state, payload) {
       state.listRoles = payload;
+    },
+    updateActivePopup(state, payload) {
+      state.activePopup = payload;
     },
   },
   actions: {
@@ -47,6 +54,9 @@ export default new Vuex.Store({
       axios
         .get("http://localhost:3000/roles?_embed=heros")
         .then(({ data }) => commit("updateListRoles", data));
+    },
+    togglePopup({ commit }, payload) {
+      commit("updateActivePopup", payload);
     },
   },
   modules: {},

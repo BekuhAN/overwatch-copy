@@ -8,15 +8,86 @@
         <router-link :to="item.link">{{ item.name }}</router-link>
       </li>
     </ul>
-    <div class="btn buy">Приобрести</div>
+    <div class="btn buy" @click="popupShow(3)">Приобрести</div>
+    <Popup v-if="isActivePopup === 3">
+      <div class="buy_content">
+        <div class="buy_content__title">Выберите платформу</div>
+        <div class="buy_content__sub_title">
+          Подробности о получении Overwatch для определенной платформы — ниже.*
+        </div>
+        <div class="buy_content__items">
+          <a
+            href="https://shop.battle.net/ru-ru/product/overwatch?blzcmp=ow_buy_nav"
+            class="item"
+          >
+            <figure class="image">
+              <img src="../assets/img/buy-link-1.png" />
+            </figure>
+            <div class="link">
+              <font-awesome-icon class="icon" icon="share-square" />
+            </div>
+          </a>
+          <a
+            href="https://www.nintendo.co.uk/Games/Nintendo-Switch-download-software/Overwatch-Legendary-Edition-1633055.html?s=countries"
+            class="item"
+          >
+            <figure class="image">
+              <img src="../assets/img/buy-link-2.png" />
+            </figure>
+            <div class="link">
+              <font-awesome-icon class="icon" icon="share-square" />
+            </div>
+          </a>
+          <a
+            href="https://store.playstation.com/ru-ru/product/EP0002-CUSA03975_00-OWLEGENDARY00000"
+            class="item"
+          >
+            <figure class="image">
+              <img src="../assets/img/buy-link-3.png" />
+            </figure>
+            <div class="link">
+              <font-awesome-icon class="icon" icon="share-square" />
+            </div>
+          </a>
+          <a
+            href="https://www.microsoft.com/store/p/overwatch-legendary-edition/9p2q994zwb64"
+            class="item"
+          >
+            <figure class="image">
+              <img src="../assets/img/buy-link-4.png" />
+            </figure>
+            <div class="link">
+              <font-awesome-icon class="icon" icon="share-square" />
+            </div>
+          </a>
+        </div>
+        <div class="buy_content__meta">
+          * Положения и условия для разных платформ могут отличаться.
+        </div>
+      </div>
+    </Popup>
   </nav>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import Popup from "./Popup.vue";
+
 export default {
   props: ["nav"],
   data() {
     return {};
+  },
+  computed: {
+    ...mapGetters(["isActivePopup"]),
+  },
+  methods: {
+    popupShow(arrIndex) {
+      this.$store.dispatch("togglePopup", arrIndex);
+    },
+  },
+  components: {
+    Popup,
   },
 };
 </script>

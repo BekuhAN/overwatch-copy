@@ -96,4 +96,66 @@ section {
     background: darken(#f06414, 5%);
   }
 }
+
+.buy_content {
+  text-align: center;
+  &__title {
+    color: #fff;
+    font-weight: bold;
+    font-family: "Century Gothic";
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+  &__sub_title {
+    color: #fff;
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  &__meta {
+    color: rgba(#fff, 0.8);
+    font-style: italic;
+    margin-top: 20px;
+  }
+  &__items {
+    display: flex;
+    .item {
+      min-width: 250px;
+      height: 250px;
+      margin: 15px;
+      background: #fff;
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+      }
+      &:first-child {
+        .image img {
+          height: 50px;
+          width: auto;
+        }
+      }
+      .image {
+        height: 210px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 180px;
+        }
+      }
+      .link {
+        width: 100%;
+        height: 40px;
+        background: #f06414;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .icon path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}
 </style>

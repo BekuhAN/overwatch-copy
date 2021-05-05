@@ -1,7 +1,7 @@
 <template>
   <div class="modal_popup">
     <div class="modal_popup__header">
-      <font-awesome-icon class="icon" @click="close(itemId)" icon="times" />
+      <font-awesome-icon class="icon" @click="close" icon="times" />
     </div>
     <div class="modal_popup__content">
       <slot></slot>
@@ -11,20 +11,24 @@
 
 <script>
 export default {
-  props: ["close", "itemId"],
+  methods: {
+    close() {
+      this.$store.dispatch("togglePopup", null);
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .modal_popup {
-  background: rgba(#000, 0.2);
+  background: rgba(#000, 0.7);
   position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 5;
-  backdrop-filter: blur(1px);
+  z-index: 10;
+  backdrop-filter: blur(2px);
   &__header {
     height: 70px;
     width: 100%;
