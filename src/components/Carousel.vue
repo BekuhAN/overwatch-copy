@@ -8,11 +8,11 @@
       >
         <slot></slot>
       </transition-group>
-      <button class="material-icons carousel__prev" @click="carouselPrev">
-        chevron_left
+      <button class="carousel__prev" @click="carouselPrev">
+        <font-awesome-icon class="icon" icon="angle-left" />
       </button>
-      <button class="material-icons carousel__next" @click="carouselNext">
-        chevron_right
+      <button class="carousel__next" @click="carouselNext">
+        <font-awesome-icon class="icon" icon="angle-right" />
       </button>
     </div>
   </div>
@@ -80,16 +80,25 @@ export default {
       transform: translateY(-50%);
       z-index: 5;
       font-size: 50px;
-      color: #fff;
       transition: 0.2s;
       cursor: pointer;
       background: none;
       border: none;
+      .icon {
+        path {
+          transition: 0.2s;
+          fill: #fff;
+        }
+      }
       &:focus {
         outline: none;
       }
       &:hover {
-        color: #f06414;
+        .icon {
+          path {
+            fill: #f06414;
+          }
+        }
       }
     }
     &__prev {

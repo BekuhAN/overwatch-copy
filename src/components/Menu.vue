@@ -72,24 +72,5 @@ export default {
       }
     }
   }
-  .buy {
-    font-weight: bold;
-    margin-left: auto;
-  }
-  .btn {
-    display: flex;
-    align-items: center;
-    padding: 0px 30px;
-    text-transform: uppercase;
-    font-size: 18px;
-    background: #f06414;
-    height: 50px;
-    color: #fff;
-    transition: .2s;
-    cursor: pointer;
-    &:hover {
-      background: darken(#f06414, 5%);
-    }
-  }
 }
 </style>

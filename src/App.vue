@@ -24,7 +24,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: #28354F;
+  color: #28354f;
   box-sizing: content-box !important;
   line-height: 1.3;
 }
@@ -64,9 +64,36 @@ section {
     margin-top: 15px;
     margin-bottom: 16px;
     font-family: "Big Noodle Titling";
+    line-height: 1;
+  }
+  .section_sub_title {
+    font-size: 24px;
+    font-family: "Century Gothic";
   }
   .section_description {
     font-size: 21px;
+  }
+}
+
+.buy {
+  margin-left: auto;
+}
+.btn {
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  background: #f06414;
+  color: #fff;
+  transition: 0.2s;
+  cursor: pointer;
+  min-width: 120px;
+  width: 180px;
+  height: 50px;
+  &:hover {
+    background: darken(#f06414, 5%);
   }
 }
 </style>
