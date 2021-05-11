@@ -5,6 +5,7 @@ import store from "./store";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faFacebookF,
+  faTwitter,
   faVk,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
@@ -23,7 +24,8 @@ library.add(
   faAngleLeft,
   faAngleRight,
   faTimes,
-  faShareSquare
+  faShareSquare,
+  faTwitter
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

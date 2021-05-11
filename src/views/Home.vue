@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <Header />
+  <main>
     <section>
       <div class="container">
         <div class="col-6 section_video">
@@ -459,13 +458,10 @@
         </div>
       </div>
     </section>
-    <Footer />
-  </div>
+  </main>
 </template>
 
 <script>
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Popup from "../components/Popup";
 import Carousel from "../components/Carousel";
 import HeroCart from "../components/HeroCart";
@@ -497,8 +493,6 @@ export default {
     this.isLoading = true;
   },
   components: {
-    Header,
-    Footer,
     Popup,
     Carousel,
     HeroCart,

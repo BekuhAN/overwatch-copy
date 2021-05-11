@@ -116,6 +116,12 @@ export default {
           }
         }
       }
+      .router-link-exact-active {
+        color: #f06414;
+        &:after {
+          left: 0;
+        }
+      }
       a {
         display: flex;
         color: #353c42;

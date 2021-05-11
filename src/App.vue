@@ -1,8 +1,21 @@
 <template>
   <div id="app">
+    <Header />
     <router-view />
+    <Footer />
   </div>
 </template>
+
+<script>
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+export default {
+  components: {
+    Header,
+    Footer,
+  },
+};
+</script>
 
 <style lang="scss">
 @font-face {
@@ -24,11 +37,12 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: #28354f;
   box-sizing: content-box !important;
   line-height: 1.3;
+  color: inherit;
 }
 #app {
+  color: #28354f;
   font-family: Roboto, sans-serif;
 }
 

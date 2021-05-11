@@ -5,15 +5,15 @@
     </div>
     <div class="footer_item social_icons">
       <div class="title">БУДЬТЕ НА СВЯЗИ!</div>
-      <div class="social_icons__item">
+      <a href="https://vk.com/overwatchru" class="social_icons__item">
         <font-awesome-icon class="icon" :icon="['fab', 'vk']" />
-      </div>
-      <div class="social_icons__item">
-        <font-awesome-icon class="icon" :icon="['fab', 'facebook-f']" />
-      </div>
-      <div class="social_icons__item">
+      </a>
+      <a href="https://twitter.com/OverwatchRU" class="social_icons__item">
+        <font-awesome-icon class="icon" :icon="['fab', 'twitter']" />
+      </a>
+      <a href="https://www.youtube.com/OverwatchRU" class="social_icons__item">
         <font-awesome-icon class="icon" :icon="['fab', 'youtube']" />
-      </div>
+      </a>
     </div>
   </footer>
 </template>
