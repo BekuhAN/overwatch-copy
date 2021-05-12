@@ -230,7 +230,7 @@ export default {
       overflow: hidden;
       border: 1px solid #ccc;
       padding: 30px;
-      transition: 0.2s;
+      transition: 0.5s;
       &.active {
         flex: 0 0 532px;
         background: #eee;
@@ -256,7 +256,7 @@ export default {
         justify-content: center;
         opacity: 0;
         flex: 0 0 382px;
-        transition: 0.5s;
+        transition: 1s;
         .title {
           font-size: 22px;
           font-weight: bold;

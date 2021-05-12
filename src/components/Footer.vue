@@ -34,6 +34,7 @@ export default {
 
 <style lang="scss">
 footer {
+  border-top: 3px solid rgba(#fff, 0.2);
   background: url("../assets/img/bg-footer.jpg") no-repeat;
   background-position: center;
   .footer_item {

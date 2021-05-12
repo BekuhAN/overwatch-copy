@@ -30,8 +30,8 @@ const routes = [
     component: CyberSport,
   },
   {
-    path: "/heros",
-    name: "Heros",
+    path: "/hero/:id",
+    name: "Hero",
     component: HeroPage,
   },
 ];

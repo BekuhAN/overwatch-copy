@@ -1,7 +1,6 @@
 <template>
   <router-link
-    :to="{ name: 'Heros', query: { id: heroItem.id } }"
-    tag="div"
+    :to="{ name: 'Hero', params: { id: heroItem.id } }"
     class="hero_item"
   >
     <figure class="hero_item__image">
