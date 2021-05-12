@@ -1,5 +1,9 @@
 <template>
-  <div class="hero_item">
+  <router-link
+    :to="{ name: 'Heros', query: { id: heroItem.id } }"
+    tag="div"
+    class="hero_item"
+  >
     <figure class="hero_item__image">
       <img :src="getImgUrl(heroItem.image)" />
     </figure>
@@ -10,7 +14,7 @@
       ></div>
       <div class="name">{{ heroItem.name }}</div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>

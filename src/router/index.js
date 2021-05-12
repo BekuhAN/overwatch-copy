@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Heros from "../views/Heros.vue";
 import News from "../views/News.vue";
 import CyberSport from "../views/CyberSport.vue";
+import HeroPage from "../views/HeroPage.vue";
 
 Vue.use(VueRouter);
 
@@ -14,8 +15,8 @@ const routes = [
     component: Home,
   },
   {
-    path: "/heros",
-    name: "Heros",
+    path: "/heroslist",
+    name: "heroslist",
     component: Heros,
   },
   {
@@ -27,6 +28,11 @@ const routes = [
     path: "/cybersport",
     name: "CyberSport",
     component: CyberSport,
+  },
+  {
+    path: "/heros",
+    name: "Heros",
+    component: HeroPage,
   },
 ];
 

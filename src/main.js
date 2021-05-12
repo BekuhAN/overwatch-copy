@@ -14,6 +14,7 @@ import {
   faAngleLeft,
   faAngleRight,
   faShareSquare,
+  faStar,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -25,7 +26,8 @@ library.add(
   faAngleRight,
   faTimes,
   faShareSquare,
-  faTwitter
+  faTwitter,
+  faStar
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
