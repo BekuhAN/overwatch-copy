@@ -120,7 +120,7 @@
         </div>
         <div class="list">
           <router-link
-            :to="{ path: `/hero/${subItem.id} ` }"
+            :to="`/hero/${subItem.id}`"
             class="item"
             v-for="subItem of item.heros"
             :key="subItem.id"
@@ -297,7 +297,7 @@ export default {
               display: flex;
               justify-content: center;
               align-items: center;
-              background: rgba(#28354f, 0.5);
+              height: 100%;
               .image {
                 border-radius: 50%;
                 background: rgba(#405275, 0.4);
@@ -318,7 +318,7 @@ export default {
               }
             }
             .content {
-              padding-left: 20px;
+              padding: 10px 20px 10px 0px;
               .name {
                 font-weight: bold;
                 font-size: 18px;
