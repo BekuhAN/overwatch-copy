@@ -1,15 +1,19 @@
 <template>
   <div id="app">
-    <Header />
+    <Header v-if="!isAdminPanel" />
     <router-view />
-    <Footer />
+    <Footer v-if="!isAdminPanel" />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { mapGetters } from "vuex";
 export default {
+  computed: {
+    ...mapGetters(["isAdminPanel"]),
+  },
   components: {
     Header,
     Footer,
@@ -64,8 +68,8 @@ section {
 }
 
 .col-4 {
-  min-width: 33.333333%;
-  padding: 0px 15px;
+  flex: 0 0 33.3333%;
+  width: 33.333%;
 }
 
 .section_title {

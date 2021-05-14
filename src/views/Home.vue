@@ -85,10 +85,10 @@
       </div>
     </section>
     <section class="about_role">
+      <div class="section_title">
+        <h2 class="section_main_title">ОСОБЕННОСТИ РОЛЕЙ</h2>
+      </div>
       <div class="container">
-        <div class="section_title">
-          <h2 class="section_main_title">ОСОБЕННОСТИ РОЛЕЙ</h2>
-        </div>
         <div class="about_role__items">
           <div class="item col-4">
             <div class="figure">
@@ -617,9 +617,9 @@ export default {
 
 .about_role {
   background: #f2f1ed;
-  .container {
-    flex-direction: column;
-  }
+  // .container {
+  //   // flex-direction: column;
+  // }
   .section_main_title {
     text-align: center;
   }
@@ -643,6 +643,7 @@ export default {
       .description {
         font-size: 18px;
         text-align: center;
+        padding: 0px 15px;
       }
     }
   }

@@ -17,6 +17,7 @@ import {
   faStar,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
+import CKEditor from "@ckeditor/ckeditor5-vue2";
 
 library.add(
   faFacebookF,
@@ -33,6 +34,7 @@ library.add(
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false;
+Vue.use(CKEditor);
 
 new Vue({
   router,

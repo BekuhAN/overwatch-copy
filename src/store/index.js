@@ -9,7 +9,9 @@ export default new Vuex.Store({
     listMenu: [],
     listHeros: [],
     listRoles: [],
+    listNews: [],
     activePopup: null,
+    adminPanel: false,
   },
   getters: {
     listMenu(state) {
@@ -24,6 +26,12 @@ export default new Vuex.Store({
     isActivePopup(state) {
       return state.activePopup;
     },
+    isAdminPanel(state) {
+      return state.adminPanel;
+    },
+    listNews(state) {
+      return state.listNews;
+    },
   },
   mutations: {
     updateListMenu(state, payload) {
@@ -37,6 +45,12 @@ export default new Vuex.Store({
     },
     updateActivePopup(state, payload) {
       state.activePopup = payload;
+    },
+    updateAdminPanel(state, payload) {
+      state.adminPanel = payload;
+    },
+    updateListNews(state, payload) {
+      state.listNews = payload;
     },
   },
   actions: {
@@ -55,8 +69,19 @@ export default new Vuex.Store({
         .get("http://localhost:3000/roles?_embed=heros")
         .then(({ data }) => commit("updateListRoles", data));
     },
+    getListNews({ commit }) {
+      axios
+        .get("http://localhost:3000/posts")
+        .then(({ data }) => commit("updateListNews", data));
+    },
     togglePopup({ commit }, payload) {
       commit("updateActivePopup", payload);
+    },
+    toggleAdminPanel({ commit }, payload) {
+      commit("updateAdminPanel", payload);
+    },
+    addNews(_, news) {
+      axios.post("http://localhost:3000/posts", news);
     },
   },
   modules: {},

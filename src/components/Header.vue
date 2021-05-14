@@ -12,12 +12,6 @@ import { mapGetters, mapActions } from "vuex";
 import Menu from "./Menu";
 
 export default {
-  props: {
-    title: {
-      type: String,
-      default: "",
-    },
-  },
   data() {
     return {};
   },

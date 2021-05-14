@@ -21,6 +21,14 @@
       "link": "/cybersport"
     }
   ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "",
+      "content": "",
+      "image": ""
+    }
+  ],
   "roles": [
     {
       "id": 2,

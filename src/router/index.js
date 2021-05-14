@@ -5,6 +5,7 @@ import Heros from "../views/Heros.vue";
 import News from "../views/News.vue";
 import CyberSport from "../views/CyberSport.vue";
 import HeroPage from "../views/HeroPage.vue";
+import AddNewsPage from "../views/AddNewsPage.vue";
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: "/hero/:id",
     name: "Hero",
     component: HeroPage,
+  },
+  {
+    path: "/addnews",
+    name: "AddNews",
+    component: AddNewsPage,
   },
 ];
 
