@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faAngleLeft,
   faAngleRight,
+  faCloudUploadAlt,
   faShareSquare,
   faStar,
   faTimes,
@@ -28,7 +29,8 @@ library.add(
   faTimes,
   faShareSquare,
   faTwitter,
-  faStar
+  faStar,
+  faCloudUploadAlt
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
