@@ -145,7 +145,6 @@ export default {
     return {
       hero: [],
       selectedTab: 1,
-      // key: 1,
     };
   },
   computed: {

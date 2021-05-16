@@ -42,8 +42,10 @@ export default {
   padding: 0;
   text-decoration: none;
   box-sizing: content-box !important;
-  line-height: 1.3;
   color: inherit;
+}
+body {
+  line-height: 1.3;
 }
 #app {
   color: #28354f;

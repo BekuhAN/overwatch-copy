@@ -69,9 +69,9 @@ export default new Vuex.Store({
         .get("http://localhost:3000/roles?_embed=heros")
         .then(({ data }) => commit("updateListRoles", data));
     },
-    getListNews({ commit }) {
+    getListNews({ commit }, params) {
       axios
-        .get("http://localhost:3000/posts")
+        .get("http://localhost:3000/posts", { params })
         .then(({ data }) => commit("updateListNews", data));
     },
     togglePopup({ commit }, payload) {

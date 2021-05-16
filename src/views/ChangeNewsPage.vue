@@ -1,8 +1,8 @@
 <template>
   <main class="admin_panel">
     <div class="container">
-      <div class="admin_panel__title">Добавить новость</div>
-      <div class="admin_panel__content">
+      <div class="admin_panel__title">Изменение новости</div>
+      <div class="admin_panel__content" v-if="news">
         <div class="admin_panel__content__left">
           <input
             class="news_title"
@@ -21,7 +21,7 @@
         </div>
         <div class="admin_panel__content__right">
           <div class="news_btns">
-            <button class="btn btn_add" @click="addNews">Добавить</button>
+            <button class="btn btn_add" @click="changeNews">Изменить</button>
             <button class="btn btn_cancel" @click="cancel">Отмена</button>
           </div>
           <div class="news_date">
@@ -48,36 +48,29 @@
 
 <script>
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import moment from "moment";
+import axios from "axios";
 export default {
   data() {
     return {
-      news: {
-        title: "",
-        content: "",
-        image: "",
-        date: "",
-      },
+      news: null,
       editor: ClassicEditor,
       editorConfig: {},
     };
   },
   beforeMount() {
-    this.news.date = moment(new Date()).format("YYYY-MM-DD");
+    // this.news.date = moment(new Date()).format("YYYY-MM-DD");
+    this.fetchData();
     this.$store.dispatch("toggleAdminPanel", true);
   },
   methods: {
     changeFile(e) {
       this.news.image = e.target.files[0].name;
     },
-    async addNews() {
-      await this.$store.dispatch("addNews", this.news);
-      this.news = {
-        title: "",
-        content: "",
-        image: "",
-        date: moment(new Date()).format("YYYY-MM-DD"),
-      };
+    async changeNews() {
+      await axios.patch(
+        "http://localhost:3000/posts/" + this.$route.params.id,
+        this.news
+      );
       await this.$router.push({ path: "/admin" });
     },
     cancel() {
@@ -85,6 +78,11 @@ export default {
     },
     getImgUrl(imgName) {
       return require("../assets/img/" + imgName);
+    },
+    fetchData() {
+      axios
+        .get("http://localhost:3000/posts/" + this.$route.params.id)
+        .then((resp) => (this.news = resp.data));
     },
   },
 };

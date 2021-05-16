@@ -6,6 +6,9 @@ import News from "../views/News.vue";
 import CyberSport from "../views/CyberSport.vue";
 import HeroPage from "../views/HeroPage.vue";
 import AddNewsPage from "../views/AddNewsPage.vue";
+import NewsPage from "../views/NewsPage.vue";
+import AdminPanel from "../views/AdminPanel.vue";
+import ChangeNewsPage from "../views/ChangeNewsPage.vue";
 
 Vue.use(VueRouter);
 
@@ -36,9 +39,24 @@ const routes = [
     component: HeroPage,
   },
   {
+    path: "/post/:id",
+    name: "Post",
+    component: NewsPage,
+  },
+  {
     path: "/addnews",
     name: "AddNews",
     component: AddNewsPage,
+  },
+  {
+    path: "/changeNews/:id",
+    name: "ChangeNews",
+    component: ChangeNewsPage,
+  },
+  {
+    path: "/admin",
+    name: "Admin",
+    component: AdminPanel,
   },
 ];
 

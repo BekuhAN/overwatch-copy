@@ -2,7 +2,6 @@
   <header>
     <div class="container">
       <Menu :nav="listMenu" />
-      <h1 v-if="title" class="page_title">{{ title }}</h1>
     </div>
   </header>
 </template>

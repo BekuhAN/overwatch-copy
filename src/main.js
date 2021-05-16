@@ -14,9 +14,12 @@ import {
   faAngleLeft,
   faAngleRight,
   faCloudUploadAlt,
+  faPencilAlt,
+  faSearch,
   faShareSquare,
   faStar,
   faTimes,
+  faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import CKEditor from "@ckeditor/ckeditor5-vue2";
 
@@ -30,7 +33,10 @@ library.add(
   faShareSquare,
   faTwitter,
   faStar,
-  faCloudUploadAlt
+  faCloudUploadAlt,
+  faPencilAlt,
+  faTrashAlt,
+  faSearch
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
