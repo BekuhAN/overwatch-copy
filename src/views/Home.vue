@@ -5,8 +5,8 @@
         <div class="col-6 section_video">
           <Popup v-if="isActivePopup === 0">
             <iframe
-              width="1140"
-              height="620"
+              width="800"
+              height="400"
               src="https://www.youtube.com/embed/FK3CfjJ857g"
               title="YouTube video player"
               frameborder="0"
@@ -74,7 +74,7 @@
               </span>
             </div>
           </div>
-          <Carousel :itemCount="countPage(sortedHeros, 6)">
+          <Carousel :role="activeRole" :itemCount="countPage(sortedHeros, 6)">
             <HeroCart
               v-for="hero of sortedHeros"
               :heroItem="hero"
@@ -239,8 +239,8 @@
         <div class="col-6 section_video">
           <Popup v-if="isActivePopup === 1">
             <iframe
-              width="1140"
-              height="620"
+              width="800"
+              height="400"
               src="https://www.youtube.com/embed/66jcoebnXsM"
               title="YouTube video player"
               frameborder="0"
@@ -373,8 +373,8 @@
         <div class="col-6 section_video">
           <Popup v-if="isActivePopup === 2">
             <iframe
-              width="1140"
-              height="620"
+              width="800"
+              height="400"
               src="https://www.youtube.com/embed/t5n8BhD5nxg"
               title="YouTube video player"
               frameborder="0"
@@ -474,6 +474,7 @@ export default {
       activeRole: null,
       sortHeros: [],
       isLoading: false,
+      margin: false,
     };
   },
   name: "Home",
@@ -514,6 +515,10 @@ export default {
       let th = this;
       console.log(role);
       if (role !== null) role.heros.map((item) => th.sortHeros.push(item));
+      this.refresh = true;
+    },
+    toggle(x) {
+      this.refresh = x;
     },
   },
 };

@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faAngleLeft,
   faAngleRight,
+  faArrowAltCircleUp,
   faCloudUploadAlt,
   faPencilAlt,
   faSearch,
@@ -22,6 +23,9 @@ import {
   faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import CKEditor from "@ckeditor/ckeditor5-vue2";
+import BackToTop from "vue-backtotop";
+
+Vue.use(BackToTop);
 
 library.add(
   faFacebookF,
@@ -36,7 +40,8 @@ library.add(
   faCloudUploadAlt,
   faPencilAlt,
   faTrashAlt,
-  faSearch
+  faSearch,
+  faArrowAltCircleUp
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

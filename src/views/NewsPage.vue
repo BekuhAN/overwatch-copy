@@ -46,11 +46,10 @@ export default {
     getImgUrl(imgName) {
       return require("../assets/img/" + imgName);
     },
-    fetchData() {
-      axios
+    async fetchData() {
+      await axios
         .get("http://localhost:3000/posts/" + this.$route.params.id)
         .then((resp) => (this.post = resp.data));
-
       this.date = moment(this.post.date).format("LL");
     },
   },

@@ -1,22 +1,39 @@
 <template>
   <div id="app">
-    <Header v-if="!isAdminPanel" />
+    <Header v-if="!isAdminPanel" @scroll="alert(123)" />
     <router-view />
     <Footer v-if="!isAdminPanel" />
+    <back-to-top class="scroll_top" visibleoffset="500"><font-awesome-icon class="icon" icon="arrow-alt-circle-up" /></back-to-top>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import BackToTop from 'vue-backtotop';
 import { mapGetters } from "vuex";
 export default {
+  data() {
+    return {
+      isScrollToTop: false,
+    };
+  },
   computed: {
     ...mapGetters(["isAdminPanel"]),
+  },
+  methods: {
+    scrollToTop() {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    },
   },
   components: {
     Header,
     Footer,
+    BackToTop,
   },
 };
 </script>
@@ -50,6 +67,7 @@ body {
 #app {
   color: #28354f;
   font-family: Roboto, sans-serif;
+  position: relative;
 }
 
 .container {
@@ -176,6 +194,18 @@ section {
         }
       }
     }
+  }
+}
+
+.scroll_top {
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+  font-size: 40px;
+  color: #f06414;
+  transition: 0.2s;
+  &:hover {
+    color: #28354f;
   }
 }
 </style>

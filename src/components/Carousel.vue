@@ -20,13 +20,14 @@
 
 <script>
 export default {
-  props: ["itemCount"],
+  props: ["itemCount", "role"],
   data() {
     return {
       currentCountPage: 0,
       margin: 0,
     };
   },
+  beforeMount() {},
   computed: {
     cssProps: function () {
       return {
@@ -51,6 +52,12 @@ export default {
       }
       this.margin = -100 * this.currentCountPage;
     },
+    selectRole() {
+      this.margin = 0;
+    },
+  },
+  watch: {
+    role: "selectRole",
   },
 };
 </script>
